@@ -1,0 +1,5 @@
+{
+  "_note": "EDIT ME: fill USD per million tokens from the official pricing page. Leave null to skip cost gating.",
+  "claude-haiku-5-5": {"in_per_mtok": 0.10, "out_per_mtok": 0.50},
+  "claude-sonnet-5-5": {"in_per_mtok": 2, "out_per_mtok": 10}
+}
