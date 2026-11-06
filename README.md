@@ -34,9 +34,3 @@ Labeling rules are the field rules in prompts/v2_candidate.txt. Do not reuse eva
 - Calibrate the judge: hand-label 30 summaries and measure judge agreement before relying on it.
 - Add a shadow/canary stage: send a small share of live traffic to the candidate, run the same scorers on sampled traces, and keep a rollback flag.
 - Add prompt caching for the stable system prompt and compare cost with the gate.
-
-## Notes
-- Tool choice: requests use tool_choice "auto" plus an instruction to call the tool, because some models reject a forced tool
-  (HTTP 400 "tool_choice: type tool and any are not supported"). Add --force-tool to force it on models that allow it.
-- If every call fails, the run stops and prints the first API error. Any API error fails the "API errors == 0" gate.
-- ANTHROPIC_BASE_URL (optional, read by the SDK) overrides the API address, e.g. to point at a local test server.
